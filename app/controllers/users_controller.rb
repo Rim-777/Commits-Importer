@@ -1,9 +1,11 @@
 class UsersController < ApplicationController
-before_action :set_user
+  before_action :set_user
+
+  respond_to :js
 
   def update
     @user.update(user_params)
-    # render nothing: true
+    respond_with(@user)
   end
 
   private
