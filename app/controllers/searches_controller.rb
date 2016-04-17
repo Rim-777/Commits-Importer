@@ -14,6 +14,6 @@ class SearchesController < ApplicationController
 
   private
   def interpolation_options
-    {resource_name: "Search by email #{params[:email]}"}
+    {resource_name: "Action"}
   end
 end

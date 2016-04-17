@@ -12,3 +12,6 @@ table.table.table-hover
   tbody
     - @commits.each do |commit|
       == render commit
+
+
+= button_to '<< back', commits_path, method: :get, class: 'btn btn-info'

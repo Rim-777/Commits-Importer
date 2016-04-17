@@ -23,11 +23,13 @@ html lang="en"
         .row
           .col-lg-2
             = link_to 'Deer', root_path, class: 'navbar-brand'
-          .col-lg-4
-            = paginate @commits if controller_name == 'commits'
-          .col-lg-4
-            .row.search_container
-              == render 'searches/form'
+          - if controller_name == 'commits'
+            .col-lg-4
+              .row
+                = paginate @commits
+            .col-lg-4
+              .row.search_container
+                == render 'searches/form'
 
 
     .container
