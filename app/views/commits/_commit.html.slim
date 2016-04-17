@@ -1,0 +1,15 @@
+tr
+  td.col-lg-1
+    = commit.date
+  td.col-lg-2
+    div class="user_name_#{commit.user_id} user_name_#{commit.user_id}_#{commit.user.commits.index(commit)}"
+      = commit.user.name
+    == render 'users/edit_form', user: commit.user, user_seq_id: "#{commit.user_id}_#{commit.user.commits.index(commit)}"
+
+    = link_to nil, class: "edit_link btn-link edit_link_#{commit.user_id}_#{commit.user.commits.index(commit)} edit_link_#{commit.user_id}",
+              type: 'button', data: {user_sequence_id: "#{commit.user_id}_#{commit.user.commits.index(commit)}"}
+      span.glyphicons.glyphicon-pencil
+  td.col-lg-4
+    = commit.sha
+  td.col-lg-5
+    = commit.message
