@@ -13,3 +13,6 @@ en:
     imports:
       create:
         notice: '%{resource_name} has successfully imported'
+    searches:
+      create:
+        notice: '%{resource_name} has successfully completed'
