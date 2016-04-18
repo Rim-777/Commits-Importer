@@ -1,28 +1,16 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Некоторые пояснения:
+Редактирование имени пользователя через Ajax сделал полностью руками, без применения
+библиотеки best_in_place, основная причина, в том, что на странице у одного пользователья может
+быть несколько коммитов, соответствнно при редактировании его имени  в одном коммите, изменения
+должны произойти коммитах этого пользователя.
 
-Things you may want to cover:
+Контроллеры для рессурсов, которые не являются моделями, в частности Import и Search
+протестировал в основном по части редиректов и рендеров и сохранения данных в базу.
+Помимо этого тотальное тестирование этих ресурсов сделано в Acceptance тестах.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+В качестве внешнего репозитория для тестирования ресурса Import я использовал один из своих
+репозиториев. Поэтому в тестах можно увидеть Имя Rim-777 и  репозиторий "AVO"
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
