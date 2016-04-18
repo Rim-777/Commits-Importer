@@ -7,8 +7,9 @@ tr
     == render 'users/edit_form', user: commit.user, user_seq_id: "#{commit.user_id}_#{commit.user.commits.index(commit)}"
 
     = link_to nil, class: "edit_link btn-link edit_link_#{commit.user_id}_#{commit.user.commits.index(commit)} edit_link_#{commit.user_id}",
-              type: 'button', data: {user_sequence_id: "#{commit.user_id}_#{commit.user.commits.index(commit)}"}
-      span.glyphicons.glyphicon-pencil
+              type: 'button', data: {user_sequence_id: "#{commit.user_id}_#{commit.user.commits.index(commit)}"},
+              id:"edit_link_#{commit.user_id}_#{commit.user.commits.index(commit)}"
+      span.glyphicon.glyphicon-pencil
   td.col-lg-4
     = commit.sha
   td.col-lg-5
