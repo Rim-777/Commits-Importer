@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20160418045920) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", using: :btree
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
   add_foreign_key "commits", "users"
 end
