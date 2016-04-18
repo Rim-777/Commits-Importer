@@ -40,7 +40,4 @@ As some user I want to be able to make search commit by user-email} do
     expect(page).to_not have_content 'someHash'
     expect(page).to_not have_content 'SomeCommit'
   end
-
-
-
 end

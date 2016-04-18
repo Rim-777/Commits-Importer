@@ -3,7 +3,6 @@ require 'rails_helper'
 RSpec.describe CommitsController, type: :controller do
 
   describe 'GET #index' do
-
     let(:user){create(:user)}
     let(:commits) { create_list(:commit, 2, user: user) }
 
@@ -17,6 +16,4 @@ RSpec.describe CommitsController, type: :controller do
       expect(response).to render_template :index
     end
   end
-
-
 end

@@ -11,7 +11,7 @@ html lang="en"
     = favicon_link_tag 'apple-touch-icon-114x114-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114'
     = favicon_link_tag 'apple-touch-icon-72x72-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72'
     = favicon_link_tag 'apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png'
-    /= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon'
+    = favicon_link_tag 'favicon.ico', :rel => 'shortcut icon'
     = javascript_include_tag "application"
 
       = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"
@@ -21,26 +21,24 @@ html lang="en"
     .navbar.navbar-default.navbar-fixed-top
       .container
         .row
-          .col-lg-3
+          .col-lg-3.col-md-3.col-sm-3.col-xs-3
             = link_to 'Deer', root_path, class: 'navbar-brand'
 
           - if controller_name == 'commits'
-            .col-lg-4
+            .col-lg-4.col-md-4.col-sm-4.col-xs-4
               .row
                 = paginate @commits
-            .col-lg-4
+            .col-lg-4.col-md-4.col-sm-4.col-xs-4
               .row.search_container
                 == render 'searches/form'
           .row.errors
-
-
     .container
       br
       br
       br
       br
       .row
-        .col-lg-12
+        .col-lg-12.col-md-12.col-sm-12.col-xs-12
           = bootstrap_flash
           = yield
 

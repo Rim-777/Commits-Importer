@@ -12,7 +12,6 @@ class Import
     create_data(result)
   end
 
-
   private
 
   def create_data(result)

@@ -11,7 +11,6 @@ As some user I want to be able to update username} do
   given!(:two_commit) { create(:commit, user_id: user.id, date: "2015-11-15 19:48:47 UTC", sha: 'someMoreHash',
                                message: 'SomeMoreCommit') }
 
-
   scenario 'User is trying to search change username for commit', js: true do
     visit commits_path
     click_on "edit_link_#{user.id}_0"

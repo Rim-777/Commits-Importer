@@ -1,9 +1,5 @@
 <% if @user.errors.present? %>
-
-<% @user.errors.full_messages.each do |message| %>
-$('.errors').html('<%= j render 'common/errors', resource: @user %>');
-<% end %>
-
+    $('.errors').html('<%= j render 'common/errors', resource: @user %>');
 <% else %>
     var userId = <%= @user.id %>;
     var userName = '<%= j @user.name  %>';

@@ -1,6 +1,6 @@
 = form_tag searches_path, method: :post
   .row
-    .col-lg-8
+    .col-lg-8.col-md-8.col-sm-8.col-xs-8
       = email_field_tag :email, '', class: 'form-control', required: "required", placeholder: 'Search by Email'
-    .col-lg-1.align-left
+    .col-lg-1.col-md-1.col-sm-1.col-xs-1
       = submit_tag 'Search', class: 'btn btn-info'

@@ -2,7 +2,6 @@ require 'rails_helper'
 
 RSpec.describe ImportsController, type: :controller do
 
-
   describe 'Get #new' do
       it 'render  template view new' do
         get :new
