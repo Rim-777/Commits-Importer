@@ -12,7 +12,7 @@ en:
         alert: '%{resource_name} could not be destroyed.'
     imports:
       create:
-        notice: '%{resource_name} has successfully imported'
+        notice: '%{resource_name} has successfully completed result is below:'
     searches:
       create:
         notice: '%{resource_name} has successfully completed'

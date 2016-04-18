@@ -7,6 +7,6 @@ class ImportsController < ApplicationController
 
   private
   def interpolation_options
-    {resource_name: 'Commits List'}
+    {resource_name: 'Request'}
   end
 end
