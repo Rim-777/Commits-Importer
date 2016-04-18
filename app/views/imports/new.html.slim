@@ -12,10 +12,10 @@
           |Commits
     = form_tag imports_path, method: :post do
       div class="field"
-        = text_field_tag :username, '', class: 'form-control', required: "required", placeholder: 'Enter Name on GitHub'
+        = text_field_tag :username, '', class: 'form-control', required: "required", placeholder: 'Enter GitHub Username'
       br
       div class="field"
-        = text_field_tag :repo, '', class: 'form-control', required: "required", placeholder: 'Enter name of Repo'
+        = text_field_tag :repo, '', class: 'form-control', required: "required", placeholder: 'Enter GitHub Repository'
       br
         = submit_tag 'Import', class: 'btn btn-info'
 
