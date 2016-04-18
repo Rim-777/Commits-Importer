@@ -1,17 +1,2 @@
-table.table.table-hover
-  thead
-    tr
-      td
-        |Date:
-      td
-        |Name:
-      td
-        |Sha:
-      td
-        |Message:
-  tbody
-    - @commits.each do |commit|
-      == render commit
-
-
+== render 'common/commits'
 = button_to '<< back', commits_path, method: :get, class: 'btn btn-info'

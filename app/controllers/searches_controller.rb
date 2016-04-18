@@ -5,7 +5,7 @@ class SearchesController < ApplicationController
   end
 
   def create
-    @commits = Search.new.search!(params[:email])
+    @commits = Search.search!(params[:email])
     respond_with(@commits) do |format|
       format.html { render :show }
     end

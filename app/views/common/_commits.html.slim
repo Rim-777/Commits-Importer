@@ -1,0 +1,14 @@
+table.table.table-hover
+  thead
+    tr
+      td
+        |Date:
+      td
+        |Name:
+      td
+        |Sha:
+      td
+        |Message:
+  tbody
+    - @commits.each do |commit|
+      == render commit

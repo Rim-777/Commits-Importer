@@ -1,7 +1,7 @@
 <% if @user.errors.present? %>
 
 <% @user.errors.full_messages.each do |message| %>
-$('.user_errors').html('<%= j message %>');
+$('.errors').html('<%= j render 'common/errors', resource: @user %>');
 <% end %>
 
 <% else %>
