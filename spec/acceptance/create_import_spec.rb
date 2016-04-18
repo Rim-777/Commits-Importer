@@ -24,7 +24,7 @@ As some user I want to be able to  make import form } do
     click_on 'Import'
 
     expect(current_path).to eq commits_path
-    expect(page).to have_content 'Commits List has successfully imported'
+    expect(page).to have_content 'Request has successfully completed result is below:'
     expect(page).to have_content '1 2 Next › Last »'
     expect(page).to have_field 'email'
     expect(page).to have_button 'Search'
