@@ -1,4 +1,8 @@
 class ImportsController < ApplicationController
+  def new
+
+  end
+
   def create
     respond_with(Import.new(params[:username], params[:repo]).import!) do |format|
       format.html { redirect_to commits_path }

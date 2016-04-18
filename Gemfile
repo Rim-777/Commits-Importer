@@ -22,12 +22,15 @@ gem 'slim-rails'
 
 group :development, :test do
   gem 'rspec-rails', "~> 3.4.2"
+  gem 'capybara'
+  gem 'capybara-webkit'
   gem 'factory_girl_rails'
   gem 'byebug'
 end
 
 group :test do
   gem 'shoulda-matchers'
+  gem 'database_cleaner'
 end
 
 group :development do
