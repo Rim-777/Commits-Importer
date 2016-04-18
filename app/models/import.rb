@@ -7,9 +7,13 @@ class Import
   end
 
   def import!
-    result = JSON.parse(RestClient.get "https://api.github.com/repos/#{username}/#{repo}/commits")
-    clear_data!
-    create_data(result)
+    begin
+      result = JSON.parse(RestClient.get "https://api.github.com/repos/#{username}/#{repo}/commits")
+      clear_data!
+      create_data(result)
+    rescue => e
+      e.response
+    end
   end
 
   private
