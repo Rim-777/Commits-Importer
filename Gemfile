@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.2.1'
 gem 'rails', '4.2.6'
 gem 'pg', '~> 0.15'
 gem 'sass-rails', '~> 5.0'
@@ -18,6 +19,7 @@ gem 'netrc', '~> 0.11.0'
 gem 'sinatra', '>=1.3.0' , require: nil
 gem 'rest-client'
 gem 'slim-rails'
+gem 'rails_12factor'
 
 group :development, :test do
   gem 'rspec-rails', "~> 3.4.2"
