@@ -18,7 +18,6 @@ As some user I want to be able to make search commit by user-email} do
     expect(page).to have_content 'Name:'
     expect(page).to have_content 'Sha:'
     expect(page).to have_content 'Message:'
-    expect(page).to have_content 'Action has successfully completed'
     expect(page).to have_content "2014-10-10 18:09:29 +0300"
     expect(page).to have_content 'SomeUser'
     expect(page).to have_content 'someHash'
@@ -34,7 +33,6 @@ As some user I want to be able to make search commit by user-email} do
     expect(page).to have_content 'Name:'
     expect(page).to have_content 'Sha:'
     expect(page).to have_content 'Message:'
-    expect(page).to have_content 'Action has successfully completed'
     expect(page).to_not have_content "2014-10-10 18:09:29 +0300"
     expect(page).to_not have_content 'SomeUser'
     expect(page).to_not have_content 'someHash'
