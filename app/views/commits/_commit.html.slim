@@ -1,16 +1,19 @@
 tr
-  td.col-lg-1.col-md-1.col-sm-1.col-xs-1
-    = commit.date
-  td.col-lg-2.col-md-2.col-sm-2.col-xs-2
+  td.col-lg-1.col-md-1.col-sm-1.col-xs-1.bord
+    = commit.date.to_time
+  td.col-lg-2.col-md-3.col-sm-3.col-xs-3.bord
+
     div class="user_name_#{commit.user_id} user_name_#{commit.user_id}_#{commit.user.commits.index(commit)}"
       = commit.user.name
     == render 'users/edit_form', user: commit.user, user_seq_id: "#{commit.user_id}_#{commit.user.commits.index(commit)}"
-
+    .row.errors id="errors_#{commit.user_id}_#{commit.user.commits.index(commit)}"
     = link_to nil, class: "edit_link btn-link edit_link_#{commit.user_id}_#{commit.user.commits.index(commit)} edit_link_#{commit.user_id}",
               type: 'button', data: {user_sequence_id: "#{commit.user_id}_#{commit.user.commits.index(commit)}"},
-              id:"edit_link_#{commit.user_id}_#{commit.user.commits.index(commit)}"
+              id: "edit_link_#{commit.user_id}_#{commit.user.commits.index(commit)}"
       span.glyphicon.glyphicon-pencil
-  td.col-lg-4.col-md-4.col-sm-4.col-xs-4
+  td.col-lg-1.col-md-1.col-sm-1.col-xs-1.bord
+    = commit.user.email
+  td.col-lg-2.col-md-2.col-sm-2.col-xs-2.bord
     = commit.sha
-  td.col-lg-5.col-md-5.col-sm-5.col-xs-5
+  td.col-lg-4.col-md-4.col-sm-4.col-xs-5.bord
     = commit.message

@@ -4,7 +4,7 @@ feature 'Make new search', %q{
 As some user I want to be able to make search commit by user-email} do
   given!(:user) { create(:user, name: 'SomeUser', email: 'some@email.test') }
   given!(:other_user) { create(:user, name: 'SomeOtherUser', email: 'someother@email.test') }
-  given!(:commit) { create(:commit, user_id: user.id, date: "2015-11-15 19:48:47 UTC",
+  given!(:commit) { create(:commit, user_id: user.id, date: "2014-10-10 18:09:29 +0300",
                            sha: 'someHash', message: 'SomeCommit') }
 
   before { visit commits_path }
@@ -19,7 +19,7 @@ As some user I want to be able to make search commit by user-email} do
     expect(page).to have_content 'Sha:'
     expect(page).to have_content 'Message:'
     expect(page).to have_content 'Action has successfully completed'
-    expect(page).to have_content "2015-11-15 19:48:47 UTC"
+    expect(page).to have_content "2014-10-10 18:09:29 +0300"
     expect(page).to have_content 'SomeUser'
     expect(page).to have_content 'someHash'
     expect(page).to have_content 'SomeCommit'
@@ -35,7 +35,7 @@ As some user I want to be able to make search commit by user-email} do
     expect(page).to have_content 'Sha:'
     expect(page).to have_content 'Message:'
     expect(page).to have_content 'Action has successfully completed'
-    expect(page).to_not have_content "2015-11-15 19:48:47 UTC"
+    expect(page).to_not have_content "2014-10-10 18:09:29 +0300"
     expect(page).to_not have_content 'SomeUser'
     expect(page).to_not have_content 'someHash'
     expect(page).to_not have_content 'SomeCommit'

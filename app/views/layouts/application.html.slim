@@ -30,16 +30,14 @@ html lang="en"
             .col-lg-4.col-md-4.col-sm-4.col-xs-4
               .row.search_container
                 == render 'searches/form'
-          .row.errors
     .container
       br
       br
       br
       br
-      .row
-        .col-lg-12.col-md-12.col-sm-12.col-xs-12
-          = bootstrap_flash
-          = yield
+
+        = bootstrap_flash
+        = yield
 
       footer
         p &copy; Timo Moss 2016

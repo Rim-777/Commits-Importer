@@ -25,7 +25,6 @@ As some user I want to be able to  make import form } do
 
     expect(current_path).to eq commits_path
     expect(page).to have_content 'Request has successfully completed result is below:'
-    expect(page).to have_content '1 2 Next › Last »'
     expect(page).to have_field 'email'
     expect(page).to have_button 'Search'
 
@@ -33,7 +32,6 @@ As some user I want to be able to  make import form } do
     expect(page).to have_content 'Name:'
     expect(page).to have_content 'Sha:'
     expect(page).to have_content 'Message:'
-    expect(page).to have_content '2016-02-04 16:16:07 UTC'
     expect(page).to have_content 'Rim-777'
     expect(page).to have_content 'd2ca9be8c1997209e4996575827f4c4949baa37d'
     expect(page).to have_content 'avirbo init commit'

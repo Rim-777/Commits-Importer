@@ -13,6 +13,7 @@ en:
     imports:
       create:
         notice: '%{resource_name} has successfully completed result is below:'
+        alert: '%{resource_name} not exist'
     searches:
       create:
         notice: '%{resource_name} has successfully completed'

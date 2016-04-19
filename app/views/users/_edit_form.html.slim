@@ -1,6 +1,7 @@
 .row
   .col-lg-1.col-md-1.col-sm-1.col-xs-1
-    = form_for user, remote: true, html: {style: "display: none", class: "edit_form_#{user_seq_id} edit_form_#{user.id}"} do |f|
-      = f.text_field :name, type: "text", class: "edit_field_#{user.id} input-medium search-query",  required: "required"
-      = f.submit "Apply", class: 'btn btn-mini btn-info edit_btn'
+    = form_for user, method: :patch, remote: true, data: {type: :json },
+               html: {style: "display: none", class: "edit_form edit_form_#{user_seq_id} edit_form_#{user.id}"} do |f|
+      = f.text_field :name, type: "text", class: "edit_field_#{user.id} input-medium search-query"
+      = f.submit "Apply", class: 'btn btn-mini btn-info edit_btn', data: {user_sequence_id: user_seq_id }
 

@@ -1,7 +1,9 @@
 class Import
-  attr_reader :username, :repo
+  attr_reader :username, :repo, :errors
+
 
   def initialize(username, repo)
+    @errors = []
     @username = username
     @repo = repo
   end
@@ -9,11 +11,16 @@ class Import
   def import!
     begin
       clear_data!
-      result = JSON.parse(RestClient.get "https://api.github.com/repos/#{username}/#{repo}/commits")
+      result = JSON.parse(RestClient.get "https://api.github.com/repos/#{username}/#{repo}/commits?per_page=500")
       create_data(result)
     rescue => e
-      e.response
+      case e.response.code
+        when 404
+          raise 'Wrong Name or Repository'
+      end
     end
+
+
   end
 
   private

@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user
 
-  respond_to :js
+  respond_to :json
 
   def update
     @user.update(user_params)

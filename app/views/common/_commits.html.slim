@@ -1,14 +1,20 @@
-table.table.table-hover
-  thead
-    tr
-      td
-        |Date:
-      td
-        |Name:
-      td
-        |Sha:
-      td
-        |Message:
-  tbody
-    - @commits.each do |commit|
-      == render commit
+
+.row
+  .col-lg-12
+
+    table.table.table-hover
+      thead
+        tr
+          td.col-lg-1.col-md-1.col-sm-1.col-xs-1
+            |Date:
+          td.col-lg-2.col-md-3.col-sm-3.col-xs-3
+            |Name:
+          td.col-lg-1.col-md-1.col-sm-1.col-xs-1
+            |Email:
+          td.col-lg-2.col-md-2.col-sm-2.col-xs-2
+            |Sha:
+          td.col-lg-5.col-md-5.col-sm-5.col-xs-5
+            |Message:
+      tbody
+        - commits.each do |commit|
+          == render commit

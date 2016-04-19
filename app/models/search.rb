@@ -1,5 +1,6 @@
 class Search
   def self.search!(email)
-    Commit.where(user_id: User.find_by_email(email))
+    # Commit.joins(:user).where("users.email = ?", email)
+    User.find_by(email: email).commits
   end
 end

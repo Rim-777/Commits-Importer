@@ -20,6 +20,7 @@ gem 'sinatra', '>=1.3.0' , require: nil
 gem 'rest-client'
 gem 'slim-rails'
 gem 'rails_12factor'
+gem 'skim'
 
 group :development, :test do
   gem 'rspec-rails', "~> 3.4.2"
