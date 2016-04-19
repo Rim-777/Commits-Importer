@@ -4,4 +4,8 @@ class Commit < ActiveRecord::Base
 
   paginates_per 30
   max_paginates_per 30
+
+
+  def self.search_by_email()
+  end
 end
