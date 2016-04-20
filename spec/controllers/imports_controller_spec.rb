@@ -15,7 +15,7 @@ RSpec.describe ImportsController, type: :controller do
       expect { request}.to change(User, :count).by(1)
     end
 
-    it 'it change number of commots in database' do
+    it 'it change number of commits in database' do
       expect { request}.to change(Commit, :count).by(220)
     end
 

@@ -11,8 +11,10 @@ class Import
       clear_data!
       create_data(get_data_from)
     rescue => e
+
       case e.response.code
         when 404
+
           raise 'Wrong Name or Repository'
         when 403
           raise 'limit is Exceeded'
@@ -36,7 +38,7 @@ class Import
       result += request
       n=n.next
     end
-     result
+    result
   end
 
   def create_data(result)
