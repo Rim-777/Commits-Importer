@@ -30,6 +30,15 @@ class Import
     result
   end
 
+  def get_data_from
+    n = 1; result = []
+    while (request = JSON.parse(RestClient.get "https://api.github.com/repos/#{username}/#{repo}/commits?page=#{n}")).any?
+      result += request
+      n=n.next
+    end
+     result
+  end
+
   def create_data(result)
     result.map! do |record|
       user = define_user_by(record)
