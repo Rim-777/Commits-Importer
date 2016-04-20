@@ -10,16 +10,17 @@ RSpec.describe ImportsController, type: :controller do
   end
 
   describe 'POST #create' do
+    let(:request){ post :create, username: 'Rim-777', repo: 'AskmeHow'}
     it 'it change number of commots in database' do
-      expect { post :create, username: 'Rim-777', repo: 'AVO'}.to change(User, :count).by(1)
+      expect { request}.to change(User, :count).by(1)
     end
 
     it 'it change number of commots in database' do
-      expect { post :create, username: 'Rim-777', repo: 'AVO'}.to change(Commit, :count).by(18)
+      expect { request}.to change(Commit, :count).by(220)
     end
 
     it 'redirect to template view Index' do
-      post :create, username: 'Rim-777', repo: 'AVO'
+      request
       expect(response).to redirect_to commits_path
     end
   end

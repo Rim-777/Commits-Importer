@@ -7,7 +7,8 @@ RSpec.describe CommitsController, type: :controller do
     let(:commits) { create_list(:commit, 2, user: user) }
     let(:other_user) { create(:user) }
     let(:other_user_commits) { create_list(:commit, 2, user: other_user) }
-    describe 'simple index ' do
+
+    describe 'index for all commits' do
 
       before { get :index }
 
@@ -21,7 +22,7 @@ RSpec.describe CommitsController, type: :controller do
 
     end
 
-    describe 'search index ' do
+    describe 'index for all search result' do
 
       before{ get :index, email: other_user.email}
 

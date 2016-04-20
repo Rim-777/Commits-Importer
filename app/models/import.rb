@@ -1,9 +1,7 @@
 class Import
-  attr_reader :username, :repo, :errors
-
+  attr_reader :username, :repo
 
   def initialize(username, repo)
-    @errors = []
     @username = username
     @repo = repo
   end
@@ -11,19 +9,27 @@ class Import
   def import!
     begin
       clear_data!
-      result = JSON.parse(RestClient.get "https://api.github.com/repos/#{username}/#{repo}/commits?per_page=500")
-      create_data(result)
+      create_data(get_data_from)
     rescue => e
       case e.response.code
         when 404
           raise 'Wrong Name or Repository'
+        when 403
+          raise 'limit is Exceeded'
       end
     end
-
-
   end
 
   private
+
+  def get_data_from
+    n = 1; result = []
+    while (request = JSON.parse(RestClient.get "https://api.github.com/repos/#{username}/#{repo}/commits?page=#{n}")).any?
+      result += request
+      n=n.next
+    end
+     result
+  end
 
   def create_data(result)
     result.map! do |record|
