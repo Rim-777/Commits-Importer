@@ -1,5 +1,8 @@
 class ImportsController < ApplicationController
 
+  def new
+  end
+
   def create
       begin
         respond_with(Import.new(params[:username], params[:repo]).import!) do |format|
