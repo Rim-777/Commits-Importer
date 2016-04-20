@@ -7,9 +7,9 @@ class Import
   end
 
   def import!
+    clear_data!
     begin
-      clear_data!
-      create_data(get_data_from)
+      data = get_data_from
     rescue => e
       case e.response.code
         when 404
@@ -18,6 +18,7 @@ class Import
           raise 'limit is Exceeded'
       end
     end
+    create_data(data)
   end
 
   private
