@@ -14,7 +14,6 @@ class Import
 
       case e.response.code
         when 404
-
           raise 'Wrong Name or Repository'
         when 403
           raise 'limit is Exceeded'
