@@ -11,7 +11,6 @@ class Import
       clear_data!
       create_data(get_data_from)
     rescue => e
-
       case e.response.code
         when 404
           raise 'Wrong Name or Repository'
