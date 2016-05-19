@@ -1,6 +1,6 @@
 tr
   td.col-lg-1.col-md-1.col-sm-1.col-xs-1.bord
-    = commit.date.to_time
+    = commit.date.to_time.to_formatted_s(:long)
   td.col-lg-2.col-md-3.col-sm-3.col-xs-3.bord
 
     div class="user_name_#{commit.user_id} user_name_#{commit.user_id}_#{commit.user.commits.index(commit)}"

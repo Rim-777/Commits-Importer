@@ -26,5 +26,3 @@ $(document).on 'click', '.edit_btn', (e) ->
     message =  errors['errors']['name']
     $('#errors_'+ userSeqId).html(JST["templates/errors"]({message: message}));
   $(this).parent('form').submit()
-
-

@@ -1,14 +1,12 @@
 require_relative 'acceptance_helper'
 
 feature 'Make new import', %q{
-As some user I want to be able to  make import form } do
-
+As some user I want to be able to make import form } do
   before { visit root_path}
 
   scenario 'User is trying to  browse import form' do
     expect(current_path).to eq root_path
     expect(page).to have_content 'Deer'
-
     within '.border-form-div' do
       expect(page).to have_content 'Commits'
       expect(page).to have_field 'username'
@@ -17,17 +15,14 @@ As some user I want to be able to  make import form } do
     end
   end
 
-
   scenario 'User is trying to make import with correct data' do
     fill_in 'username', with: 'Rim-777'
     fill_in 'repo', with: 'AskmeHow'
     click_on 'Import'
-
     expect(current_path).to eq commits_path
     expect(page).to have_content 'Request has successfully completed result is below:'
     expect(page).to have_field 'email'
     expect(page).to have_button 'Search'
-
     expect(page).to have_content 'Date:'
     expect(page).to have_content 'Name:'
     expect(page).to have_content 'Sha:'
@@ -40,13 +35,10 @@ As some user I want to be able to  make import form } do
     expect(page).to have_content '1 2 3 4 5 … Next › Last »'
   end
 
-
   scenario 'User is trying to make import with invalid data' do
     fill_in 'username', with: 'Rim-777'
     fill_in 'repo', with: 'SomeWrongRepositoryName'
     click_on 'Import'
     expect(page).to have_content 'Wrong Name or Repository'
   end
-
-
 end

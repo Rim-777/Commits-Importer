@@ -10,10 +10,8 @@ As some user I want to be able to make search commit by user-email} do
   before { visit commits_path }
 
   scenario 'User is trying to search existed commit' do
-
     fill_in 'email', with: 'some@email.test'
     click_on 'Search'
-
     expect(page).to have_content 'Date:'
     expect(page).to have_content 'Name:'
     expect(page).to have_content 'Sha:'
@@ -25,10 +23,8 @@ As some user I want to be able to make search commit by user-email} do
   end
 
   scenario 'User is trying to search unexisted commit' do
-
     fill_in 'email', with: 'someother@email.test'
     click_on 'Search'
-
     expect(page).to have_content 'Date:'
     expect(page).to have_content 'Name:'
     expect(page).to have_content 'Sha:'

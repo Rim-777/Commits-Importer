@@ -19,5 +19,3 @@ class ImportsController < ApplicationController
     {resource_name: 'Request'}
   end
 end
-
-

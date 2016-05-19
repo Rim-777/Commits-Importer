@@ -55,5 +55,4 @@ class Import
   def clear_data!
     User.destroy_all
   end
-
 end

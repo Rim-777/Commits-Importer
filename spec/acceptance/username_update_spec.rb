@@ -16,7 +16,6 @@ As some user I want to be able to update username} do
     click_on "edit_link_#{user.id}_0"
     fill_in 'user_name', with: 'NewName'
     click_on 'Apply'
-
     expect(page).to_not have_content 'SomeUser'
     expect(page).to have_content 'NewName'
     expect(page).to_not have_content 'SomeOtherUser'

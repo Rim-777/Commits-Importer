@@ -9,7 +9,6 @@ RSpec.describe CommitsController, type: :controller do
     let(:other_user_commits) { create_list(:commit, 2, user: other_user) }
 
     describe 'index for all commits' do
-
       before { get :index }
 
       it 'populates an array of all commits' do
@@ -19,11 +18,9 @@ RSpec.describe CommitsController, type: :controller do
       it 'render index view' do
         expect(response).to render_template :index
       end
-
     end
 
     describe 'index for all search result' do
-
       before{ get :index, email: other_user.email}
 
       it 'should  receive find_by_email for User' do
@@ -39,6 +36,5 @@ RSpec.describe CommitsController, type: :controller do
         expect(response).to render_template :index
       end
     end
-
   end
 end
