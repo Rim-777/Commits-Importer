@@ -1,5 +1,11 @@
-== README
+This is a simple application to get a commits  from githab.
+You just enter the user-name and the title of the repository,
+and get a list of all the commits that repository.
 
+You can check it out here:
+https://rocky-bastion-21252.herokuapp.com/
 
-
+Attention
+Githab has limitation for commits geting.
+If in repository are too much of commits, you can get a notification about the limitation. It acts 1 hour.
 
